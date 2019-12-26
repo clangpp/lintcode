@@ -13,7 +13,7 @@ public:
     int low = 0, high = nums.size() - 1;
     for (; low <= high ;) {
       for (; low <= high && nums[low] < k; ++low) {}
-      for (; low <= high && nums[high] >= k; --high) {}
+      for (; low <= high && k <= nums[high]; --high) {}
       if (low <= high) {
         std::swap(nums[low], nums[high]);
       }
